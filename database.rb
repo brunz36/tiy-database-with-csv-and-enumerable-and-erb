@@ -137,46 +137,10 @@ class Database
   end
 
   def write_file_html
-    instructor = @person_array.select { |person| person.position == "Instructor" }
-    instructor_salary = instructor.map { |wages| wages.salary }
-    instructor_salary_all = instructor_salary.sum
+    template = ERB.new(File.read("report.html.erb"))
+    html = template.result(binding)
 
-    director = @person_array.select { |person| person.position == "Campus Director"}
-    director_salary = director.map { |wages| wages.salary }
-    director_salary_all = director_salary.sum
-
-    student = @person_array.select { |person| person.position == "Student"}
-
-    fileHtml = File.new("report.html", "w+")
-
-    fileHtml.puts %{<!DOCTYPE html>}
-    fileHtml.puts %{<html>}
-    fileHtml.puts %{\t<head lang="en">}
-    fileHtml.puts %{\t\t<meta charset="UTF-8">}
-    fileHtml.puts %{\t\t<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">}
-    fileHtml.puts %{\t\t<title>The Iron Yard Database</title>}
-    fileHtml.puts %{\t\t<link rel="stylesheet" href="screen.css">}
-    fileHtml.puts %{\t</head>}
-    fileHtml.puts %{\t<body>}
-    fileHtml.puts %{\t\t<header>}
-    fileHtml.puts %{\t\t\t<h1>The Iron Yard Database</h1>}
-    fileHtml.puts %{\t\t</header>}
-    fileHtml.puts %{\t\t<ul>}
-    @person_array.each do |person|
-      fileHtml.print %{\t\t\t<li>}
-      fileHtml.print %{Name: #{person.name}\t\t}.ljust(20) + "| Phone Number: #{person.phone_number}".ljust(27) + "| Adress: #{person.address}".ljust(50) + "| Position: #{person.position}".ljust(28) + "| Salary: $#{person.salary}".ljust(17) + "| Slack Account: #{person.slack_acct}".ljust(28) + "| GitHub Account: #{person.github_acct}"
-      fileHtml.puts %{\t\t\t</li>}
-    end
-    fileHtml.puts %{\t\t</ul>}
-    fileHtml.puts %{\t\t<p>The total sum of the Instructors salary at The Iron Yard is: $#{instructor_salary_all}.</p>}
-    fileHtml.puts %{\t\t<p>The total sum of the Campus Directors salary at The Iron Yard is: $#{director_salary_all}.</p>}
-    fileHtml.puts %{\t\t<p>There are a total of #{instructor.count} Instructors at The Iron Yard.</p>}
-    fileHtml.puts %{\t\t<p>There are a total of #{director.length} Campus Directors at The Iron Yard.</p>}
-    fileHtml.puts %{\t\t<p>There are a total of #{student.length} students at The Iron Yard.</p>}
-    fileHtml.puts %{\t</body>}
-    fileHtml.puts %{</html>}
-
-    fileHtml.close()
+    File.write("report.html", html)
   end
 
   def write_file_txt
@@ -234,7 +198,7 @@ class Menu
           @database.write_file_txt
         else
           puts
-          puts "Please choose one of the correct options please. Here is the onscreen Report."
+          puts "Please choose one of the correct options please."
         end
       elsif selected == "q"
         @menu = false

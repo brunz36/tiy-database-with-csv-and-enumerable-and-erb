@@ -1,3 +1,52 @@
+body {
+  margin: auto;
+  background-color: #777;
+  max-width: 1200px;
+}
+
 header {
+  display: flex;
+  justify-content: center;
   background-color: #333;
+  max-height: 10em;
+}
+
+h1 {
+  text-align: left;
+  color: #fff;
+  font-family: 'Bree Serif', serif;
+  padding: 0.5em;
+  margin: 0;
+  letter-spacing: 0.1em;
+  flex: 3 3 100%;
+  align-self: center;
+}
+
+header img {
+  max-width: 5em;
+  max-height: auto;
+  flex: 1 1 100%;
+}
+
+/*ul {
+max-width: 800px;
+}
+
+li.top_row {
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  border: 1px solid red;
+}*/
+
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
 }

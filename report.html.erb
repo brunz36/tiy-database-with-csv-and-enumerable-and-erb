@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>The Iron Yard Database</title>
+		<link rel="stylesheet" href=" screen.css">
+		<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<img src="tiy_logo_1.png" alt="The Iron Yard Logo">
+			<h1>The Iron Yard Database</h1>
+		</header>
+		<ul>
+			<li class="top_row">Name</li>
+			<li class="top_row">Phone Number</li>
+			<li class="top_row">Address</li>
+			<li class="top_row">Position</li>
+			<li class="top_row">Salary</li>
+			<li class="top_row">Slack Account</li>
+			<li class="top_row">GitHub Account</li>
+			<% @person_array.each do |person| %>
+				<li class="name"><%= person.name %></li>
+				<li  class="phone_number"><%= person.phone_number %></li>
+				<li class="address"><%= person.address %></li>
+				<li class="position"><%= person.position %></li>
+				<li class="salary"><%= person.salary %></li>
+				<li class="slack_acct"><%= person.slack_acct %></li>
+				<li class="github_acct"><%= person.github_acct %></li>
+			<% end %>
+		</ul>
+		<div class="summary">
+				<% @person_array.group_by { |person| person.position }.each do |position, people| %>
+					<% total_salary = people.map { |person| person.salary }.sum %>
+					<ul>
+						<li>Here is the info for the <%= position %> position.</li>
+						<li>The total salary is: $ <%= total_salary %>.</li>
+						 <% if people.count == 1 %>
+						<li>There is only 1 <%= position %>.</li>
+						<% else %>
+						<li>There are <%= people.count %> <%= position %>s.</li>
+						<% end %>
+					</ul>
+			<% end %>
+		</div>
+
+	</body>
+
+</html>
