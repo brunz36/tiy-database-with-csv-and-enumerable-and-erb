@@ -33,7 +33,21 @@
 					<td><%= person.github_acct %></td>
 				</tr>
 				<% end %>
-		</ul>
+		<div class="mobile">
+			<% @person_array.each do |person| %>
+			<ul>
+				<li>Name: <%= person.name %></li>
+				<li>Phone Number: <%= person.phone_number %></li>
+				<li>Address: <%= person.address %></li>
+				<li>Position: <%= person.position %></li>
+				<li>Salary: <%= person.salary %></li>
+				<li>Slack Account: <%= person.slack_acct %></li>
+				<li>GitHub Account: <%= person.github_acct %></li>
+			</ul>
+			</tr>
+			<% end %>
+
+		</div>
 		<div class="summary">
 				<% @person_array.group_by { |person| person.position }.each do |position, people| %>
 					<% total_salary = people.map { |person| person.salary }.sum %>

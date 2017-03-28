@@ -73,8 +73,6 @@ td {
   border-bottom: 1px solid #333;
   border-left: 1px solid #333;
   padding: 0 0 0.5em 0.5em;
-
-
 }
 
 .summary li {
@@ -89,9 +87,44 @@ footer {
   padding-top: 2em;
 }
 
+footer a {
+  text-decoration: none;
+}
+
+footer a:link { color: inherit;; }
+footer a:visited { color: inherit;;}
+footer a:hover { color: #ccc;}
+
+.mobile {
+  display: none;
+}
+
 @media (max-width: 550px) {
   h1 {
     font-size: 1.5em;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    order: 2;
+  }
+
+ul {
+  padding: 0 0 0 0.5em;
+}
+  li {
+    list-style: none;
+  }
+
+  table {
+    order: 2;
+    display: none;
+  }
+
+  .summary {
+    margin: 0 0.5em 0 0.5em;
   }
 
 }
