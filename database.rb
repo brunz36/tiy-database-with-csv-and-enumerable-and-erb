@@ -144,7 +144,10 @@ class Database
   end
 
   def write_file_txt
-    puts "NOTHING"
+    template = ERB.new(File.read("report.txt.erb"))
+    txt = template.result(binding)
+
+    File.write("report.txt", txt)
   end
 end
 

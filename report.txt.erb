@@ -1,0 +1,8 @@
+Name           Phone Number   Address                                      Position            Salary    Slack Account  GitHub Account
+<% @person_array.each do |person| %>
+<%=person.name.ljust(15)%><%=person.phone_number.to_s.ljust(15)%><%=person.address.ljust(45)%><%=person.position.ljust(20)%><%=person.salary.to_s.ljust(10)%><%=person.slack_acct.ljust(15)%><%=person.github_acct.ljust(15)%><% end %>
+<% @person_array.group_by { |person| person.position }.each do |position, people| %><% total_salary = people.map { |person| person.salary }.sum %>
+Here is the info for the <%= position %> position.
+The total salary is: $ <%= total_salary %>.
+<% if people.count == 1 %>There is only 1 <%= position %>.<% else %>There are <%= people.count %> <%= position %>s.<% end %>
+<% end %>

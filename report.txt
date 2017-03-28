@@ -1,0 +1,33 @@
+Name           Phone Number   Address                                      Position            Salary    Slack Account  GitHub Account
+
+Gavin Stark    7278248292     123 Main St., Tampa FL 34343                 Instructor          75000     gstark         gstark         
+Pat Miller     7279292044     6563 1st Ave S, St. Petersburg FL 45345      Student             45000     pjmiller       pjmiller3      
+Toni Warren    7279736453     453 Carrige Dr., Palm Harbor FL 45222        Campus Director     90000     toniwarren     tnwarn         
+Bruno Ribeiro  8134958434     1108 Thornwood Dr, Oldsmar FL 34677          Student             35000     brunz36        brunz36        
+Angel Smith    8137976363     4355 Iron St., Largo FL 25423                TA                  20000     angelsm23      angsmith23     
+Jason Perry    7279835373     124 Main St., Tampa FL 34343                 Instructor          70000     ambetha        ambetha        
+Thais Feia     8139273738     9338 Arlington Ave, Tampa FL 34334           Campus Director     75000     thaisfeia      tfeia          
+Mark Dewey     7279340342     3833 Dagonfly Ln, Lutz FL 25292              Instructor          75000     mdewey         mcdewy         
+Perne Patel    348393933      443 Main St., Tampa FL 45222                 Student             60000     pepate         pateper        
+Biggie         2023434399     1st Ave Broolyn NY 03433                     MC                  1000000   biggie         biggie         
+
+Here is the info for the Instructor position.
+The total salary is: $ 220000.
+There are 3 Instructors.
+
+Here is the info for the Student position.
+The total salary is: $ 140000.
+There are 3 Students.
+
+Here is the info for the Campus Director position.
+The total salary is: $ 165000.
+There are 2 Campus Directors.
+
+Here is the info for the TA position.
+The total salary is: $ 20000.
+There is only 1 TA.
+
+Here is the info for the MC position.
+The total salary is: $ 1000000.
+There is only 1 MC.
+
