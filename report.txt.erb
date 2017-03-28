@@ -1,3 +1,5 @@
+The Iron Yard Database
+
 Name           Phone Number   Address                                      Position            Salary    Slack Account  GitHub Account
 <% @person_array.each do |person| %>
 <%=person.name.ljust(15)%><%=person.phone_number.to_s.ljust(15)%><%=person.address.ljust(45)%><%=person.position.ljust(20)%><%=person.salary.to_s.ljust(10)%><%=person.slack_acct.ljust(15)%><%=person.github_acct.ljust(15)%><% end %>
