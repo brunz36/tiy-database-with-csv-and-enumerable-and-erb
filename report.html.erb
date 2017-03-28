@@ -12,23 +12,27 @@
 			<img src="tiy_logo_1.png" alt="The Iron Yard Logo">
 			<h1>The Iron Yard Database</h1>
 		</header>
-		<ul>
-			<li class="top_row">Name</li>
-			<li class="top_row">Phone Number</li>
-			<li class="top_row">Address</li>
-			<li class="top_row">Position</li>
-			<li class="top_row">Salary</li>
-			<li class="top_row">Slack Account</li>
-			<li class="top_row">GitHub Account</li>
-			<% @person_array.each do |person| %>
-				<li class="name"><%= person.name %></li>
-				<li  class="phone_number"><%= person.phone_number %></li>
-				<li class="address"><%= person.address %></li>
-				<li class="position"><%= person.position %></li>
-				<li class="salary"><%= person.salary %></li>
-				<li class="slack_acct"><%= person.slack_acct %></li>
-				<li class="github_acct"><%= person.github_acct %></li>
-			<% end %>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Phone Number</th>
+					<th>Address</th>
+					<th>Position</th>
+					<th>Salary</th>
+					<th>Slack Account</th>
+					<th>GitHub Account</th>
+				</tr>
+				<% @person_array.each do |person| %>
+				<tr>
+					<td><%= person.name %></td>
+					<td><%= person.phone_number %></td>
+					<td><%= person.address %></td>
+					<td><%= person.position %></td>
+					<td><%= person.salary %></td>
+					<td><%= person.slack_acct %></td>
+					<td><%= person.github_acct %></td>
+				</tr>
+				<% end %>
 		</ul>
 		<div class="summary">
 				<% @person_array.group_by { |person| person.position }.each do |position, people| %>
@@ -44,7 +48,8 @@
 					</ul>
 			<% end %>
 		</div>
-
 	</body>
-
+	<footer>
+    <h5>  Copyright &copy; 2017 Bruno Ribeiro&nbsp;<a href="mailto:brunz36@gmail.com">brunz36@gmail.com</a></h5>
+  </footer>
 </html>

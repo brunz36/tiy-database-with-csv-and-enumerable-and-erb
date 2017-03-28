@@ -2,6 +2,9 @@ body {
   margin: auto;
   background-color: #777;
   max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 header {
@@ -9,6 +12,7 @@ header {
   justify-content: center;
   background-color: #333;
   max-height: 10em;
+  order: 1
 }
 
 h1 {
@@ -26,23 +30,64 @@ header img {
   max-width: 5em;
   max-height: auto;
   flex: 1 1 100%;
+  padding: 0.5em;
 }
 
-/*ul {
-max-width: 800px;
-}
-
-li.top_row {
-  flex-direction: column;
-}
-
-li {
+table {
   display: flex;
-  flex-direction: row;
-  list-style: none;
-  border: 1px solid red;
-}*/
+  order: 2;
+  align-self: center;
+  margin: 2em;
+}
 
+tr {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid red;
+}
+
+th {
+  padding: 3em;
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  letter-spacing: 0.1em;
+  font-size: 90%;
+}
+
+td {
+  padding: 0.5em;
+  border: 1px solid #000;
+  font-size: 80%;
+  min-height: 20em;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.summary {
+  order: 3;
+  margin: 0 8em;
+}
+
+.summary ul {
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #333;
+  padding: 0 0 0.5em 0.5em;
+
+
+}
+
+.summary li {
+  list-style: none;
+  font-size: 90%;
+}
+
+footer {
+  order: 4;
+  text-align: center;
+  font-size: 50%;
+  padding-top: 2em;
+}
 
 @media (max-width: 550px) {
   h1 {
