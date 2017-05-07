@@ -215,6 +215,4 @@ class Menu
   end
 end
 
-instance = Menu.new
-
-instance.menu_selection
+Menu.new.menu_selection
